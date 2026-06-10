@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Token 获取器 ✨</title>
+    <title>Obtenedor de Tokens ✨</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
     <div class="bg-deco">
         <span class="deco-item deco-star" style="top:8%;left:5%;">⭐</span>
@@ -21,14 +23,14 @@
     <main class="container">
         <header class="site-header">
             <div class="header-icon">🔑</div>
-            <h1>Token 获取器</h1>
-            <p class="subtitle">让认证这件事变得可爱一点 ~</p>
+            <h1>Obtenedor de Tokens</h1>
+            <p class="subtitle">Haciendo el proceso de autenticación un poco más amigable ~</p>
         </header>
 
         <section class="card main-card">
-            <!-- 模式选择 -->
+            <!-- Selección de plataforma -->
             <div class="control-group mode-group">
-                <label class="control-label">选择平台</label>
+                <label class="control-label">Seleccionar plataforma</label>
                 <div class="mode-toggle" id="modeToggle">
                     <button class="mode-btn active" data-mode="freebuff">
                         <span class="btn-emoji">🌸</span>
@@ -41,68 +43,68 @@
                 </div>
             </div>
 
-            <!-- 开始按钮 -->
+            <!-- Botón de inicio -->
             <button id="startBtn" class="action-btn primary-btn">
                 <span class="btn-glow"></span>
                 <span class="btn-content">
                     <span class="btn-icon">✨</span>
-                    <span class="btn-text">开始认证</span>
+                    <span class="btn-text">Iniciar autenticación</span>
                 </span>
             </button>
 
-            <!-- 登录区域 -->
+            <!-- Área de inicio de sesión -->
             <div id="loginArea" class="area login-area hidden">
                 <div class="area-icon">🌸</div>
-                <p class="area-title">请在浏览器里完成登录</p>
+                <p class="area-title">Por favor, complete el inicio de sesión en el navegador</p>
                 <a id="loginLink" href="#" target="_blank" class="login-link">
-                    <span>去登录 →</span>
+                    <span>Ir a iniciar sesión →</span>
                 </a>
-                <p class="area-hint">点完记得回来哦，我会在这里等着 ~</p>
+                <p class="area-hint">¡Recuerda volver después de iniciar sesión, te estaré esperando aquí! ~</p>
             </div>
 
-            <!-- 状态区域 -->
+            <!-- Área de estado -->
             <div id="statusArea" class="area status-area hidden">
                 <div class="spinner-box">
                     <div class="spinner">🌀</div>
                 </div>
-                <p id="statusText" class="status-text">正在等待大人登录...</p>
-                <p id="statusSub" class="status-sub">第 1 次尝试</p>
+                <p id="statusText" class="status-text">Esperando a que inicie sesión...</p>
+                <p id="statusSub" class="status-sub">Intento número 1</p>
             </div>
 
-            <!-- 结果区域 -->
+            <!-- Área de resultado -->
             <div id="resultArea" class="area result-area hidden">
                 <div class="result-badge">🎉</div>
-                <h2 class="result-title">拿到 token 啦！</h2>
-                
+                <h2 class="result-title">¡Ya tenemos el token!</h2>
+
                 <div class="user-card">
                     <div class="user-avatar" id="userAvatar">🧸</div>
                     <div class="user-details">
-                        <p class="user-name"><span class="label">名字</span><span id="userName" class="value">-</span></p>
-                        <p class="user-email"><span class="label">邮箱</span><span id="userEmail" class="value">-</span></p>
-                        <p class="user-id"><span class="label">账号</span><span id="userId" class="value">-</span></p>
-                        <p class="user-mode"><span class="label">平台</span><span id="userMode" class="value">-</span></p>
+                        <p class="user-name"><span class="label">Nombre</span><span id="userName" class="value">-</span></p>
+                        <p class="user-email"><span class="label">Correo</span><span id="userEmail" class="value">-</span></p>
+                        <p class="user-id"><span class="label">Cuenta</span><span id="userId" class="value">-</span></p>
+                        <p class="user-mode"><span class="label">Plataforma</span><span id="userMode" class="value">-</span></p>
                     </div>
                 </div>
 
                 <div class="token-section">
-                    <label class="token-label">你的 Token</label>
+                    <label class="token-label">Tu Token</label>
                     <div class="token-input-group">
                         <code id="tokenDisplay" class="token-display">***</code>
-                        <button id="copyBtn" class="icon-btn" title="抄走">
+                        <button id="copyBtn" class="icon-btn" title="Copiar">
                             <span>📋</span>
                         </button>
                     </div>
-                    <p id="copyTip" class="copy-tip hidden">已复制到剪贴板 ~</p>
+                    <p id="copyTip" class="copy-tip hidden">¡Copiado al portapapeles! ~</p>
                 </div>
 
                 <div class="result-actions">
                     <button id="verifyBtn" class="action-btn secondary-btn">
                         <span class="btn-icon">🔍</span>
-                        <span>验一下</span>
+                        <span>Verificar</span>
                     </button>
                     <button id="copyEnvBtn" class="action-btn primary-btn small">
                         <span class="btn-icon">💾</span>
-                        <span>复制环境变量</span>
+                        <span>Copiar var. de entorno</span>
                     </button>
                 </div>
                 <p id="actionTip" class="action-tip"></p>
@@ -110,7 +112,7 @@
         </section>
 
         <footer class="site-footer">
-            <p>made with 💖 &nbsp;|&nbsp; freebuff2api</p>
+            <p>hecho con 💖 &nbsp;|&nbsp; freebuff2api</p>
         </footer>
     </main>
 
@@ -121,7 +123,7 @@
         let eventSource = null;
         let currentToken = '';
 
-        // 模式切换
+        // Cambio de modo
         modeBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 modeBtns.forEach(b => b.classList.remove('active'));
@@ -130,14 +132,14 @@
             });
         });
 
-        // 隐藏所有区域
+        // Ocultar todas las secciones
         function hideAreas() {
             $('loginArea').classList.add('hidden');
             $('statusArea').classList.add('hidden');
             $('resultArea').classList.add('hidden');
         }
 
-        // 开始认证
+        // Iniciar autenticación
         $('startBtn').addEventListener('click', async () => {
             hideAreas();
             $('startBtn').disabled = true;
@@ -157,13 +159,13 @@
                 $('loginArea').classList.remove('hidden');
                 $('statusArea').classList.remove('hidden');
 
-                // 打开链接
+                // Abrir enlace
                 window.open(data.login_url, '_blank');
 
-                // SSE 轮询
+                // SSE Polling
                 startPolling(data.fingerprint_id);
             } catch (e) {
-                alert('出错了：' + e.message);
+                alert('Ocurrió un error: ' + e.message);
                 $('startBtn').disabled = false;
                 $('startBtn').classList.remove('loading');
             }
@@ -176,24 +178,24 @@
 
             eventSource.onmessage = ev => {
                 const data = JSON.parse(ev.data);
-                
+
                 if (data.event === 'pending') {
                     attempt = data.attempt;
-                    $('statusText').textContent = '正在等待大人登录...';
-                    $('statusSub').textContent = `第 ${attempt} 次尝试`;
+                    $('statusText').textContent = 'Esperando a que inicie sesión...';
+                    $('statusSub').textContent = `Intento número ${attempt}`;
                 } else if (data.event === 'success') {
                     eventSource.close();
                     showResult(data.user, currentMode);
                 } else if (data.event === 'timeout') {
                     eventSource.close();
-                    $('statusText').textContent = '等太久了，超时了 QAQ';
-                    $('statusSub').textContent = '请重新点开始认证';
+                    $('statusText').textContent = 'Se agotó el tiempo de espera QAQ';
+                    $('statusSub').textContent = 'Por favor, inicie la autenticación de nuevo';
                     $('startBtn').disabled = false;
                     $('startBtn').classList.remove('loading');
                 } else if (data.event === 'error') {
                     eventSource.close();
-                    $('statusText').textContent = '出错了：' + (data.message || '未知错误');
-                    $('statusSub').textContent = '请重新尝试';
+                    $('statusText').textContent = 'Error: ' + (data.message || 'Error desconocido');
+                    $('statusSub').textContent = 'Por favor, inténtelo de nuevo';
                     $('startBtn').disabled = false;
                     $('startBtn').classList.remove('loading');
                 }
@@ -211,19 +213,19 @@
             $('resultArea').classList.remove('hidden');
 
             currentToken = user.authToken || '';
-            $('userName').textContent = user.name || '匿名';
-            $('userEmail').textContent = user.email || '无';
-            $('userId').textContent = user.id || user.userId || user.sub || '无';
+            $('userName').textContent = user.name || 'Anónimo';
+            $('userEmail').textContent = user.email || 'Ninguno';
+            $('userId').textContent = user.id || user.userId || user.sub || 'Ninguno';
             $('userMode').textContent = mode === 'codebuff' ? 'Codebuff' : 'Freebuff';
-            $('tokenDisplay').textContent = currentToken || '未返回 token';
-            
-            // 根据名字选个头像
+            $('tokenDisplay').textContent = currentToken || 'No se recibió ningún token';
+
+            // Elegir un avatar según el nombre
             const avatars = ['🧸', '🐱', '🐰', '🦊', '🐼', '🐨', '🐯', '🐹'];
             const idx = (user.name || '').length % avatars.length;
             $('userAvatar').textContent = avatars[idx];
         }
 
-        // 复制 token
+        // Copiar token
         $('copyBtn').addEventListener('click', async () => {
             try {
                 await navigator.clipboard.writeText(currentToken);
@@ -242,7 +244,7 @@
             }
         });
 
-        // 验证 token
+        // Verificar token
         $('verifyBtn').addEventListener('click', async () => {
             $('verifyBtn').disabled = true;
             try {
@@ -252,29 +254,30 @@
                     body: JSON.stringify({ token: currentToken })
                 });
                 const data = await resp.json();
-                $('actionTip').textContent = data.ok ? `验证通过 ~ ${data.info}` : `验证失败：${data.info}`;
+                $('actionTip').textContent = data.ok ? `Verificación exitosa ~ ${data.info}` : `Verificación fallida: ${data.info}`;
                 $('actionTip').className = 'action-tip ' + (data.ok ? 'tip-ok' : 'tip-err');
             } catch (e) {
-                $('actionTip').textContent = '验证请求出错：' + e.message;
+                $('actionTip').textContent = 'Error en la solicitud de verificación: ' + e.message;
                 $('actionTip').className = 'action-tip tip-err';
             }
             $('verifyBtn').disabled = false;
         });
 
-        // 复制环境变量文本
+        // Copiar texto de variable de entorno
         $('copyEnvBtn').addEventListener('click', async () => {
             const envLine = `FREEBUFF_TOKEN=${currentToken}`;
             $('copyEnvBtn').disabled = true;
             try {
                 await navigator.clipboard.writeText(envLine);
-                $('actionTip').textContent = '已复制 FREEBUFF_TOKEN';
+                $('actionTip').textContent = 'FREEBUFF_TOKEN copiado al portapapeles';
                 $('actionTip').className = 'action-tip tip-ok';
             } catch (e) {
-                $('actionTip').textContent = '复制出错：' + e.message;
+                $('actionTip').textContent = 'Error al copiar: ' + e.message;
                 $('actionTip').className = 'action-tip tip-err';
             }
             $('copyEnvBtn').disabled = false;
         });
     </script>
 </body>
+
 </html>
